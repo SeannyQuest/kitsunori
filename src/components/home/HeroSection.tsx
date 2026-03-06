@@ -8,7 +8,7 @@ export default function HeroSection() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.55) 100%), url('https://images.unsplash.com/photo-1617196034183-421b4040ed20?w=1800&q=80')",
+            "linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.55) 100%), url('/hero-bg.avif')",
         }}
         role="img"
         aria-label="Beautifully plated sushi rolls at Kitsu Nori"
