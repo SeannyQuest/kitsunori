@@ -137,7 +137,7 @@ export default function CheckoutModal({ open, onClose }: CheckoutModalProps) {
                 Pickup: <strong>{form.pickupTime}</strong>
               </p>
               <p className="text-xs text-[rgb(156,148,138)] mt-1">
-                2610 W Anderson Ln, Austin TX 78757
+                2310 S Lamar Blvd, Suite 102, Austin TX 78704
               </p>
             </div>
             <p className="text-sm text-[rgb(156,148,138)]">

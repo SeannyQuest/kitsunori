@@ -111,8 +111,8 @@ export default function Footer() {
               <li className="flex gap-3 text-sm text-white/70">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-[rgb(184,152,90)]" />
                 <span>
-                  2610 W Anderson Ln<br />
-                  Austin, TX 78757
+                  2310 S Lamar Blvd, Suite 102<br />
+                  Austin, TX 78704
                 </span>
               </li>
               <li>

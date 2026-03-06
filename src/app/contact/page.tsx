@@ -54,7 +54,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-medium text-[rgb(42,40,38)] mb-0.5">Address</p>
                   <p className="text-[rgb(156,148,138)] text-sm">
-                    2610 W Anderson Ln<br />Austin, TX 78757
+                    2310 S Lamar Blvd, Suite 102<br />Austin, TX 78704
                   </p>
                 </div>
               </div>

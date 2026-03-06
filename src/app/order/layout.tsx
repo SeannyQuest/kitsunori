@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Order Online",
   description:
-    "Order Kitsu Nori for pickup online. Fresh handrolls, wagyu, uni, and cold tasting plates ready in 20–30 minutes at 2610 W Anderson Ln, Austin TX.",
+    "Order Kitsu Nori for pickup online. Fresh handrolls, wagyu, uni, and cold tasting plates ready in 20–30 minutes at 2310 S Lamar Blvd, Suite 102, Austin TX.",
   keywords: [
     "Kitsu Nori order online",
     "sushi pickup Austin",

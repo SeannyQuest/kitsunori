@@ -80,8 +80,8 @@ export default function HoursLocation() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[rgb(184,152,90)] mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-white text-sm">2610 W Anderson Ln</p>
-                  <p className="text-white/60 text-sm">Austin, TX 78757</p>
+                  <p className="text-white text-sm">2310 S Lamar Blvd, Suite 102</p>
+                  <p className="text-white/60 text-sm">Austin, TX 78704</p>
                 </div>
               </div>
               <a

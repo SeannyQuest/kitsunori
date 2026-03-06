@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "uni handroll",
     "wagyu sushi Austin",
     "best sushi Austin",
-    "W Anderson Lane restaurant",
+    "S Lamar Blvd restaurant Austin",
   ],
   authors: [{ name: "Kitsu Nori" }],
   creator: "Kitsu Nori",
@@ -89,10 +89,10 @@ const restaurantSchema = {
   logo: `${BASE_URL}/logo.png`,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "2610 W Anderson Ln",
+    streetAddress: "2310 S Lamar Blvd, Suite 102",
     addressLocality: "Austin",
     addressRegion: "TX",
-    postalCode: "78757",
+    postalCode: "78704",
     addressCountry: "US",
   },
   geo: {
@@ -100,7 +100,8 @@ const restaurantSchema = {
     latitude: "30.3614",
     longitude: "-97.7377",
   },
-  hasMap: "https://maps.google.com/?q=2610+W+Anderson+Ln+Austin+TX+78757",
+  hasMap:
+    "https://maps.google.com/?q=2310+S+Lamar+Blvd+Suite+102+Austin+TX+78704",
   servesCuisine: ["Japanese", "Asian Fusion", "Sushi", "Handroll"],
   priceRange: "$$",
   currenciesAccepted: "USD",

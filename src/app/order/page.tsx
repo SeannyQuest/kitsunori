@@ -24,7 +24,7 @@ export default function OrderPage() {
         </p>
         <h1 className="font-serif text-4xl lg:text-5xl font-light">Order Online</h1>
         <p className="text-white/60 text-sm mt-3">
-          Ready in 20–30 minutes · Pickup at 2610 W Anderson Ln
+          Ready in 20–30 minutes · Pickup at 2310 S Lamar Blvd, Suite 102
         </p>
       </div>
 
