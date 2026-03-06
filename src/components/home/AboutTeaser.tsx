@@ -26,20 +26,21 @@ export default function AboutTeaser() {
               Our Story
             </p>
             <h2 className="font-serif text-4xl lg:text-5xl font-light text-[rgb(29,51,98)] leading-tight mb-6">
-              Where Every Roll
+              Beautiful
               <br />
-              Tells a Story
+              <em className="font-normal italic">and Intentional</em>
             </h2>
             <div className="w-12 h-px bg-[rgb(184,152,90)] mb-8" />
             <p className="text-[rgb(156,148,138)] leading-relaxed mb-6 text-base">
-              Founded in the heart of Austin, Kitsu Nori is the culmination of
-              Chef Kenji Mori&apos;s lifelong passion for Japanese culinary
-              tradition and his deep love for the vibrant food culture of Texas.
+              Chef Paul Qui has carried this idea since his early days at Uchi
+              in 2003 — sushi as both craft and visual experience, closer to art
+              than food. Kitsu Nori is that vision, finally alive on South
+              Lamar.
             </p>
             <p className="text-[rgb(156,148,138)] leading-relaxed mb-10 text-base">
-              Every dish is crafted with intention — sourcing fish from
-              sustainable fisheries, vegetables from local farms, and
-              inspiration from both sides of the Pacific.
+              Inspired by <em>ikebana</em> and <em>kintsugi</em> — balance,
+              restraint, and intention in every bite. Nothing accidental.
+              Everything transformed.
             </p>
             <Link
               href="/about"

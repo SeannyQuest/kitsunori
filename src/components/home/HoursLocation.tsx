@@ -2,10 +2,10 @@ import Link from "next/link";
 import { MapPin, Phone, Clock } from "lucide-react";
 
 const hours = [
-  { day: "Monday – Thursday", time: "11:00 AM – 10:00 PM" },
-  { day: "Friday", time: "11:00 AM – 11:00 PM" },
-  { day: "Saturday", time: "12:00 PM – 11:00 PM" },
-  { day: "Sunday", time: "12:00 PM – 9:00 PM" },
+  { day: "Monday", time: "Closed" },
+  { day: "Tuesday – Thursday", time: "5:00 PM – 9:00 PM" },
+  { day: "Friday – Saturday", time: "5:00 PM – 10:00 PM" },
+  { day: "Sunday", time: "5:00 PM – 9:00 PM" },
 ];
 
 export default function HoursLocation() {
@@ -34,19 +34,18 @@ export default function HoursLocation() {
               ))}
             </div>
 
-            {/* Happy hour callout */}
             <div className="bg-white/10 border border-white/20 p-5 rounded-sm">
               <div className="flex items-center gap-2 mb-2">
                 <Clock className="w-4 h-4 text-[rgb(184,152,90)]" />
                 <span className="text-[rgb(184,152,90)] text-xs tracking-[0.3em] uppercase font-semibold">
-                  Happy Hour
+                  Reservations
                 </span>
               </div>
               <p className="text-white/90 text-sm">
-                Monday – Friday &nbsp;·&nbsp; 3:00 PM – 6:00 PM
+                Walk-ins welcome &nbsp;·&nbsp; Reservations recommended
               </p>
               <p className="text-white/60 text-xs mt-1">
-                Half-price appetizers, $5 sake, and specialty roll discounts
+                30 seats inside · ~145-seat patio shared with Roselle next door
               </p>
             </div>
           </div>
@@ -80,16 +79,18 @@ export default function HoursLocation() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-[rgb(184,152,90)] mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-white text-sm">2310 S Lamar Blvd, Suite 102</p>
+                  <p className="text-white text-sm">
+                    2310 S Lamar Blvd, Suite 102
+                  </p>
                   <p className="text-white/60 text-sm">Austin, TX 78704</p>
                 </div>
               </div>
               <a
-                href="tel:+15125550198"
+                href="tel:+15125205009"
                 className="flex items-center gap-3 text-white/80 hover:text-white transition-colors text-sm group"
               >
                 <Phone className="w-4 h-4 text-[rgb(184,152,90)] shrink-0" />
-                (512) 555-0198
+                (512) 520-5009
               </a>
             </div>
 

@@ -16,7 +16,12 @@ export default function ContactPage() {
       const res = await fetch("/api/inquiries", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, party_size: 0, phone: "", event_date: "" }),
+        body: JSON.stringify({
+          ...form,
+          party_size: 0,
+          phone: "",
+          event_date: "",
+        }),
       });
       if (res.ok) {
         setSent(true);
@@ -37,14 +42,18 @@ export default function ContactPage() {
         <p className="text-xs tracking-[0.4em] uppercase text-[rgb(184,152,90)] font-medium mb-3">
           Say Hello
         </p>
-        <h1 className="font-serif text-5xl lg:text-6xl font-light">Contact Us</h1>
+        <h1 className="font-serif text-5xl lg:text-6xl font-light">
+          Contact Us
+        </h1>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Info */}
           <div>
-            <h2 className="font-serif text-3xl text-[rgb(29,51,98)] mb-8">Find Us</h2>
+            <h2 className="font-serif text-3xl text-[rgb(29,51,98)] mb-8">
+              Find Us
+            </h2>
 
             <div className="space-y-6 mb-10">
               <div className="flex gap-4">
@@ -52,9 +61,13 @@ export default function ContactPage() {
                   <MapPin className="w-4 h-4 text-[rgb(29,51,98)]" />
                 </div>
                 <div>
-                  <p className="font-medium text-[rgb(42,40,38)] mb-0.5">Address</p>
+                  <p className="font-medium text-[rgb(42,40,38)] mb-0.5">
+                    Address
+                  </p>
                   <p className="text-[rgb(156,148,138)] text-sm">
-                    2310 S Lamar Blvd, Suite 102<br />Austin, TX 78704
+                    2310 S Lamar Blvd, Suite 102
+                    <br />
+                    Austin, TX 78704
                   </p>
                 </div>
               </div>
@@ -64,12 +77,14 @@ export default function ContactPage() {
                   <Phone className="w-4 h-4 text-[rgb(29,51,98)]" />
                 </div>
                 <div>
-                  <p className="font-medium text-[rgb(42,40,38)] mb-0.5">Phone</p>
+                  <p className="font-medium text-[rgb(42,40,38)] mb-0.5">
+                    Phone
+                  </p>
                   <a
-                    href="tel:+15125550198"
+                    href="tel:+15125205009"
                     className="text-[rgb(156,148,138)] text-sm hover:text-[rgb(29,51,98)] transition-colors"
                   >
-                    (512) 555-0198
+                    (512) 520-5009
                   </a>
                 </div>
               </div>
@@ -79,7 +94,9 @@ export default function ContactPage() {
                   <Mail className="w-4 h-4 text-[rgb(29,51,98)]" />
                 </div>
                 <div>
-                  <p className="font-medium text-[rgb(42,40,38)] mb-0.5">Email</p>
+                  <p className="font-medium text-[rgb(42,40,38)] mb-0.5">
+                    Email
+                  </p>
                   <a
                     href="mailto:hello@kitsunori.com"
                     className="text-[rgb(156,148,138)] text-sm hover:text-[rgb(29,51,98)] transition-colors"
@@ -97,16 +114,20 @@ export default function ContactPage() {
                   <p className="font-medium text-[rgb(42,40,38)] mb-2">Hours</p>
                   <div className="space-y-1 text-sm text-[rgb(156,148,138)]">
                     <div className="flex justify-between gap-8">
-                      <span>Mon – Thu</span><span>11am – 10pm</span>
+                      <span>Monday</span>
+                      <span>Closed</span>
                     </div>
                     <div className="flex justify-between gap-8">
-                      <span>Friday</span><span>11am – 11pm</span>
+                      <span>Tue – Thu</span>
+                      <span>5pm – 9pm</span>
                     </div>
                     <div className="flex justify-between gap-8">
-                      <span>Saturday</span><span>12pm – 11pm</span>
+                      <span>Fri – Sat</span>
+                      <span>5pm – 10pm</span>
                     </div>
                     <div className="flex justify-between gap-8">
-                      <span>Sunday</span><span>12pm – 9pm</span>
+                      <span>Sunday</span>
+                      <span>5pm – 9pm</span>
                     </div>
                   </div>
                 </div>
@@ -130,12 +151,16 @@ export default function ContactPage() {
 
           {/* Form */}
           <div>
-            <h2 className="font-serif text-3xl text-[rgb(29,51,98)] mb-8">Send a Message</h2>
+            <h2 className="font-serif text-3xl text-[rgb(29,51,98)] mb-8">
+              Send a Message
+            </h2>
 
             {sent ? (
               <div className="py-12 text-center bg-[rgb(252,250,246)] border border-gray-100">
                 <div className="text-4xl mb-4">✓</div>
-                <h3 className="font-serif text-2xl text-[rgb(29,51,98)] mb-3">Message Sent!</h3>
+                <h3 className="font-serif text-2xl text-[rgb(29,51,98)] mb-3">
+                  Message Sent!
+                </h3>
                 <p className="text-[rgb(156,148,138)] text-sm">
                   We&apos;ll get back to you within 24 hours.
                 </p>
@@ -149,7 +174,9 @@ export default function ContactPage() {
                   <input
                     required
                     value={form.name}
-                    onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((p) => ({ ...p, name: e.target.value }))
+                    }
                     placeholder="Your name"
                     className="w-full px-4 py-3 border border-gray-200 text-sm text-[rgb(42,40,38)] placeholder-[rgb(156,148,138)] focus:outline-none focus:border-[rgb(29,51,98)] transition-colors"
                   />
@@ -162,7 +189,9 @@ export default function ContactPage() {
                     type="email"
                     required
                     value={form.email}
-                    onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((p) => ({ ...p, email: e.target.value }))
+                    }
                     placeholder="you@email.com"
                     className="w-full px-4 py-3 border border-gray-200 text-sm text-[rgb(42,40,38)] placeholder-[rgb(156,148,138)] focus:outline-none focus:border-[rgb(29,51,98)] transition-colors"
                   />
@@ -174,7 +203,9 @@ export default function ContactPage() {
                   <textarea
                     required
                     value={form.message}
-                    onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
+                    onChange={(e) =>
+                      setForm((p) => ({ ...p, message: e.target.value }))
+                    }
                     placeholder="How can we help?"
                     rows={6}
                     className="w-full px-4 py-3 border border-gray-200 text-sm text-[rgb(42,40,38)] placeholder-[rgb(156,148,138)] focus:outline-none focus:border-[rgb(29,51,98)] transition-colors resize-none"

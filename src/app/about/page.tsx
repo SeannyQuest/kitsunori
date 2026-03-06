@@ -4,27 +4,22 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Our Story",
   description:
-    "Meet Chef Kenji Mori and learn the story behind Kitsu Nori — Austin's premier handroll bar born from 20+ years of Japanese culinary mastery and a deep love for Texas.",
+    "James Beard Award-winning Chef Paul Qui brings his vision of edible ikebana to South Lamar. The story behind Kitsu Nori — a handroll bar rooted in balance, restraint, and intention.",
   keywords: [
     "Kitsu Nori story",
-    "Chef Kenji Mori",
-    "Japanese chef Austin TX",
+    "Chef Paul Qui Austin",
+    "James Beard Award Austin chef",
+    "Paul Qui handroll bar",
     "about Kitsu Nori Austin",
+    "ikebana sushi Austin",
   ],
   alternates: { canonical: "https://kitsunori.com/about" },
   openGraph: {
     title: "Our Story | Kitsu Nori",
     description:
-      "Meet Chef Kenji Mori — trained in Tokyo, inspired by Austin. The story behind Kitsu Nori.",
+      "Chef Paul Qui's vision since his Uchi days in 2003 — now alive on South Lamar. Balance, restraint, and intention in every bite.",
     url: "https://kitsunori.com/about",
-    images: [
-      {
-        url: "/og-about.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Chef Kenji Mori at Kitsu Nori",
-      },
-    ],
+    images: [{ url: "/og-about.jpg", width: 1200, height: 630, alt: "Chef Paul Qui at Kitsu Nori" }],
   },
 };
 
@@ -46,46 +41,52 @@ export default function AboutPage() {
           Our Story
         </p>
         <h1 className="font-serif text-5xl lg:text-6xl font-light mb-5">
-          Crafted from the Heart
+          Beautiful and Intentional
         </h1>
         <p className="text-white/60 max-w-xl mx-auto text-base leading-relaxed">
-          How a young chef from Osaka brought his passion to Austin — and built
-          something that feels like home.
+          A vision twenty years in the making — finally alive on South Lamar.
         </p>
       </div>
 
       {/* Story */}
       <section className="section-padding bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="prose prose-lg max-w-none">
-            <p className="text-lg text-[rgb(42,40,38)] leading-relaxed mb-6 font-light">
-              Kitsu Nori was born from a simple belief: that great sushi
-              shouldn&apos;t require a passport or a trust fund. Chef Kenji Mori
-              grew up watching his grandmother prepare traditional washoku in
-              their small Osaka kitchen — each gesture precise, each ingredient
-              chosen with reverence.
+          <p className="text-lg text-[rgb(42,40,38)] leading-relaxed mb-6 font-light">
+            This idea has lived in Chef Paul Qui&apos;s head since his early days
+            at Uchi in 2003, when he first began exploring sushi as both craft
+            and visual experience — something closer to art than food.
+          </p>
+          <p className="text-[rgb(156,148,138)] leading-relaxed mb-6">
+            Kitsu Nori is inspired by <em>ikebana</em>, the Japanese art of
+            floral arrangement. Like ikebana, each dish is built around balance,
+            restraint, and intention. Nothing is accidental. Every element on
+            the plate has a reason to be there.
+          </p>
+          <p className="text-[rgb(156,148,138)] leading-relaxed mb-6">
+            The space itself draws from <em>kintsugi</em> — the Japanese
+            philosophy of repairing broken things with gold, finding beauty in
+            imperfection. The natural-edged wood tables are sealed with gold
+            epoxy. Broken plates from other restaurants are repurposed the same
+            way. Nothing is wasted. Everything is transformed.
+          </p>
+          <blockquote className="border-l-2 border-[rgb(184,152,90)] pl-6 my-10">
+            <p className="font-serif text-xl text-[rgb(29,51,98)] font-light leading-relaxed italic">
+              &ldquo;Our goal with Kitsu Nori is to serve something beautiful and
+              intentional. Sushi could be more than just food — it could be an
+              experience of balance, care and craft.&rdquo;
             </p>
-            <p className="text-[rgb(156,148,138)] leading-relaxed mb-6">
-              After training under master sushi chef Hiroshi Tanaka in Tokyo for
-              six years and working at acclaimed restaurants in San Francisco
-              and New York, Kenji arrived in Austin in 2019. He fell in love
-              with the city&apos;s energy, its creativity, and its deep pride in
-              local culture.
-            </p>
-            <p className="text-[rgb(156,148,138)] leading-relaxed mb-6">
-              Kitsu Nori opened in 2021 with a single mission: to serve food
-              that honors Japanese tradition while celebrating the warmth and
-              spirit of Austin. Every roll, every plate of sashimi, every bowl
-              of miso soup is made with intention — sourced from sustainable
-              fisheries, supported by local farms, and prepared by a team that
-              genuinely cares.
-            </p>
-            <p className="text-[rgb(156,148,138)] leading-relaxed">
-              We believe that dining is a form of connection — between chef and
-              guest, between cultures, between past and present. Come hungry.
-              Leave inspired.
-            </p>
-          </div>
+            <cite className="block mt-4 text-xs tracking-widest uppercase text-[rgb(156,148,138)] not-italic font-medium">
+              — Chef Paul Qui
+            </cite>
+          </blockquote>
+          <p className="text-[rgb(156,148,138)] leading-relaxed">
+            Kitsu Nori opened December 13, 2025. The kitchen blends classical
+            French technique with Japanese precision — think sake au poivre,
+            brown butter meunière, naturally pink rice tinted with beet juice.
+            Sauces arrive tableside to preserve the crispness of the nori.
+            There are 30 seats inside. Around 145 outside. Reservations
+            recommended.
+          </p>
         </div>
       </section>
 
@@ -97,7 +98,7 @@ export default function AboutPage() {
               <div className="aspect-[3/4] overflow-hidden bg-gray-100">
                 <img
                   src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80"
-                  alt="Chef Kenji Mori"
+                  alt="Chef Paul Qui"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -109,29 +110,31 @@ export default function AboutPage() {
                 Chef & Founder
               </p>
               <h2 className="font-serif text-4xl lg:text-5xl font-light text-[rgb(29,51,98)] mb-2">
-                Kenji Mori
+                Paul Qui
               </h2>
               <p className="text-[rgb(156,148,138)] text-sm mb-6 tracking-wide">
-                Executive Chef · Born in Osaka, Japan
+                James Beard Award-Winning Chef · Austin, TX
               </p>
               <div className="w-12 h-px bg-[rgb(184,152,90)] mb-8" />
               <p className="text-[rgb(156,148,138)] leading-relaxed mb-5">
-                With over 20 years of culinary experience spanning Tokyo, New
-                York, and San Francisco, Chef Kenji brings a reverent approach
-                to traditional Japanese technique — filtered through his love
-                for bold, honest flavors.
+                Paul Qui is one of Austin&apos;s most celebrated chefs — a James
+                Beard Award winner known for East Side King and Thai Kun. His
+                culinary voice is defined by a rare fluency across Japanese,
+                French, and Filipino traditions.
               </p>
               <p className="text-[rgb(156,148,138)] leading-relaxed mb-8">
-                "I want every guest to feel the care that went into their meal.
-                Not through showiness — through honesty. The best ingredient,
-                prepared the right way."
+                The beverage program is led by Bill Norris, Austin cocktail
+                legend, with sake, Japanese whisky highballs on draft, and
+                precision craft cocktails designed to complement the food.
               </p>
               <div className="flex flex-wrap gap-4 text-xs text-[rgb(156,148,138)] uppercase tracking-widest">
+                <span>James Beard Award</span>
+                <span>·</span>
                 <span>Uchi Alumni</span>
                 <span>·</span>
-                <span>Nobu NY</span>
+                <span>East Side King</span>
                 <span>·</span>
-                <span>Sukiyabashi Jiro (Stage)</span>
+                <span>Thai Kun</span>
               </div>
             </div>
           </div>
@@ -146,15 +149,16 @@ export default function AboutPage() {
               The Space
             </p>
             <h2 className="font-serif text-4xl font-light text-[rgb(29,51,98)]">
-              Come As You Are
+              Repaired with Gold
             </h2>
+            <p className="text-[rgb(156,148,138)] max-w-md mx-auto mt-4 text-sm leading-relaxed">
+              30 intimate seats inside. Natural wood tables sealed with gold epoxy.
+              A 145-seat patio shared with sister restaurant Roselle next door.
+            </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {galleryImages.map((src, i) => (
-              <div
-                key={i}
-                className="aspect-square overflow-hidden bg-gray-100"
-              >
+              <div key={i} className="aspect-square overflow-hidden bg-gray-100">
                 <img
                   src={src}
                   alt={`Kitsu Nori interior ${i + 1}`}

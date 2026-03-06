@@ -83,7 +83,7 @@ const restaurantSchema = {
   description:
     "Austin's premier handroll bar and Asian fusion restaurant. Fresh sashimi, wagyu, uni, and signature handrolls crafted with intention.",
   url: BASE_URL,
-  telephone: "+1-512-555-0198",
+  telephone: "+1-512-520-5009",
   email: "hello@kitsunori.com",
   image: `${BASE_URL}/og-image.jpg`,
   logo: `${BASE_URL}/logo.png`,
@@ -111,26 +111,20 @@ const restaurantSchema = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-      opens: "11:00",
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday"],
+      opens: "17:00",
+      closes: "21:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Friday", "Saturday"],
+      opens: "17:00",
       closes: "22:00",
     },
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Friday",
-      opens: "11:00",
-      closes: "23:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "12:00",
-      closes: "23:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
       dayOfWeek: "Sunday",
-      opens: "12:00",
+      opens: "17:00",
       closes: "21:00",
     },
   ],

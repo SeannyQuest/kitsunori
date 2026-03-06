@@ -20,8 +20,8 @@ export default function Footer() {
               </p>
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              Where Japanese precision meets Texas warmth. Handcrafted rolls, fresh
-              sashimi, and elevated Asian fusion in the heart of Austin.
+              Chef Paul Qui&apos;s handroll bar on South Lamar. Balance,
+              restraint, and intention in every bite. Dinner nightly Tue–Sun.
             </p>
             <div className="flex gap-4">
               <a
@@ -78,28 +78,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-white/70">
               <li className="flex justify-between gap-4">
-                <span>Mon – Thu</span>
-                <span>11am – 10pm</span>
+                <span>Monday</span>
+                <span>Closed</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span>Fri</span>
-                <span>11am – 11pm</span>
+                <span>Tue – Thu</span>
+                <span>5pm – 9pm</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span>Sat</span>
-                <span>12pm – 11pm</span>
+                <span>Fri – Sat</span>
+                <span>5pm – 10pm</span>
               </li>
               <li className="flex justify-between gap-4">
                 <span>Sun</span>
-                <span>12pm – 9pm</span>
+                <span>5pm – 9pm</span>
               </li>
             </ul>
-            <div className="mt-5 pt-5 border-t border-white/10">
-              <p className="text-xs text-[rgb(184,152,90)] font-medium tracking-wider uppercase">
-                Happy Hour
-              </p>
-              <p className="text-sm text-white/70 mt-1">Mon–Fri · 3pm–6pm</p>
-            </div>
           </div>
 
           {/* Contact */}
@@ -111,17 +105,18 @@ export default function Footer() {
               <li className="flex gap-3 text-sm text-white/70">
                 <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-[rgb(184,152,90)]" />
                 <span>
-                  2310 S Lamar Blvd, Suite 102<br />
+                  2310 S Lamar Blvd, Suite 102
+                  <br />
                   Austin, TX 78704
                 </span>
               </li>
               <li>
                 <a
-                  href="tel:+15125550198"
+                  href="tel:+15125205009"
                   className="flex gap-3 text-sm text-white/70 hover:text-white transition-colors"
                 >
                   <Phone className="w-4 h-4 mt-0.5 shrink-0 text-[rgb(184,152,90)]" />
-                  (512) 555-0198
+                  (512) 520-5009
                 </a>
               </li>
               <li>
@@ -143,10 +138,16 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
           <p>© {currentYear} Kitsu Nori. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-white/70 transition-colors">
+            <Link
+              href="/privacy"
+              className="hover:text-white/70 transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="/admin" className="hover:text-white/70 transition-colors">
+            <Link
+              href="/admin"
+              className="hover:text-white/70 transition-colors"
+            >
               Admin
             </Link>
           </div>

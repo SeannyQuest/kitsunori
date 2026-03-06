@@ -18,20 +18,20 @@ export default function HeroSection() {
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
         {/* Eyebrow */}
         <p className="text-xs tracking-[0.5em] uppercase text-white/70 mb-6 font-medium">
-          Asian Fusion · Austin, Texas
+          Chef Paul Qui · South Lamar · Austin
         </p>
 
         {/* Headline */}
         <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight mb-6 text-white">
-          Crafted with
+          Beautiful and
           <br />
-          <em className="font-normal italic">Intention</em>
+          <em className="font-normal italic">Intentional</em>
         </h1>
 
         {/* Tagline */}
         <p className="text-base sm:text-lg text-white/80 max-w-xl mx-auto mb-10 leading-relaxed font-light">
-          Where Japanese precision meets Austin soul. Fresh, seasonal ingredients
-          transformed into memorable meals.
+          A handroll bar rooted in balance, restraint, and craft. James Beard
+          Award–winning Chef Paul Qui&apos;s vision — alive on South Lamar.
         </p>
 
         {/* CTAs */}
