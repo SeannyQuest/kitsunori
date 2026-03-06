@@ -10,9 +10,9 @@ export default function AboutTeaser() {
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden bg-gray-100">
               <img
-                src="https://images.unsplash.com/photo-1559410545-0bdcd187e0a6?w=900&q=80"
-                alt="Chef preparing sushi at Kitsu Nori"
-                className="w-full h-full object-cover"
+                src="/paul-qui.webp"
+                alt="Chef Paul Qui, founder of Kitsu Nori"
+                className="w-full h-full object-cover object-top"
                 loading="lazy"
               />
             </div>

@@ -19,7 +19,14 @@ export const metadata: Metadata = {
     description:
       "Chef Paul Qui's vision since his Uchi days in 2003 — now alive on South Lamar. Balance, restraint, and intention in every bite.",
     url: "https://kitsunori.com/about",
-    images: [{ url: "/og-about.jpg", width: 1200, height: 630, alt: "Chef Paul Qui at Kitsu Nori" }],
+    images: [
+      {
+        url: "/og-about.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Chef Paul Qui at Kitsu Nori",
+      },
+    ],
   },
 };
 
@@ -52,9 +59,9 @@ export default function AboutPage() {
       <section className="section-padding bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <p className="text-lg text-[rgb(42,40,38)] leading-relaxed mb-6 font-light">
-            This idea has lived in Chef Paul Qui&apos;s head since his early days
-            at Uchi in 2003, when he first began exploring sushi as both craft
-            and visual experience — something closer to art than food.
+            This idea has lived in Chef Paul Qui&apos;s head since his early
+            days at Uchi in 2003, when he first began exploring sushi as both
+            craft and visual experience — something closer to art than food.
           </p>
           <p className="text-[rgb(156,148,138)] leading-relaxed mb-6">
             Kitsu Nori is inspired by <em>ikebana</em>, the Japanese art of
@@ -71,9 +78,9 @@ export default function AboutPage() {
           </p>
           <blockquote className="border-l-2 border-[rgb(184,152,90)] pl-6 my-10">
             <p className="font-serif text-xl text-[rgb(29,51,98)] font-light leading-relaxed italic">
-              &ldquo;Our goal with Kitsu Nori is to serve something beautiful and
-              intentional. Sushi could be more than just food — it could be an
-              experience of balance, care and craft.&rdquo;
+              &ldquo;Our goal with Kitsu Nori is to serve something beautiful
+              and intentional. Sushi could be more than just food — it could be
+              an experience of balance, care and craft.&rdquo;
             </p>
             <cite className="block mt-4 text-xs tracking-widest uppercase text-[rgb(156,148,138)] not-italic font-medium">
               — Chef Paul Qui
@@ -83,9 +90,8 @@ export default function AboutPage() {
             Kitsu Nori opened December 13, 2025. The kitchen blends classical
             French technique with Japanese precision — think sake au poivre,
             brown butter meunière, naturally pink rice tinted with beet juice.
-            Sauces arrive tableside to preserve the crispness of the nori.
-            There are 30 seats inside. Around 145 outside. Reservations
-            recommended.
+            Sauces arrive tableside to preserve the crispness of the nori. There
+            are 30 seats inside. Around 145 outside. Reservations recommended.
           </p>
         </div>
       </section>
@@ -97,9 +103,9 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-[3/4] overflow-hidden bg-gray-100">
                 <img
-                  src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80"
+                  src="/paul-qui.webp"
                   alt="Chef Paul Qui"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>
@@ -152,13 +158,17 @@ export default function AboutPage() {
               Repaired with Gold
             </h2>
             <p className="text-[rgb(156,148,138)] max-w-md mx-auto mt-4 text-sm leading-relaxed">
-              30 intimate seats inside. Natural wood tables sealed with gold epoxy.
-              A 145-seat patio shared with sister restaurant Roselle next door.
+              30 intimate seats inside. Natural wood tables sealed with gold
+              epoxy. A 145-seat patio shared with sister restaurant Roselle next
+              door.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {galleryImages.map((src, i) => (
-              <div key={i} className="aspect-square overflow-hidden bg-gray-100">
+              <div
+                key={i}
+                className="aspect-square overflow-hidden bg-gray-100"
+              >
                 <img
                   src={src}
                   alt={`Kitsu Nori interior ${i + 1}`}
