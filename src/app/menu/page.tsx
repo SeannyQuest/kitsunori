@@ -1,13 +1,173 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { Download, ChevronDown, ChevronUp } from "lucide-react";
 import { menuCategories, menuItems, getItemsByCategory } from "@/lib/menu-data";
 import DietaryBadge from "@/components/shared/DietaryBadge";
+import JsonLd from "@/components/shared/JsonLd";
 import { formatPrice } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import type { DietaryTag } from "@/types";
+
+const menuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  name: "Kitsu Nori Menu",
+  description:
+    "Full menu including snacks, cold tasting, yakimono, and handrolls.",
+  url: "https://kitsunori.com/menu",
+  hasMenuSection: [
+    {
+      "@type": "MenuSection",
+      name: "Snacks",
+      hasMenuItem: [
+        {
+          "@type": "MenuItem",
+          name: "Miso Soup",
+          description: "Green onion, tofu, shiitake, wakame.",
+          offers: { "@type": "Offer", price: "5.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Edamame",
+          description: "Togarashi, sea salt.",
+          offers: { "@type": "Offer", price: "4.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Chips & Dips",
+          description:
+            "Japanese potato chips, blue crab dip, smoked trout, chives.",
+          offers: { "@type": "Offer", price: "18.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Uni Ham",
+          description: "Sea urchin, country ham, black truffle.",
+          offers: { "@type": "Offer", price: "35.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Mushroom Salad",
+          description: "Trumpet, shiitake, red mizuna, sesame.",
+          offers: { "@type": "Offer", price: "9.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Midori Salad",
+          description:
+            "Seasonal greens, green goddess, pickled onions, furikake.",
+          offers: { "@type": "Offer", price: "7.00", priceCurrency: "USD" },
+        },
+      ],
+    },
+    {
+      "@type": "MenuSection",
+      name: "Cold Tasting",
+      hasMenuItem: [
+        {
+          "@type": "MenuItem",
+          name: "Hamachi Crudo",
+          description: "Orange, ponzu, orange oil, serrano pepper.",
+          offers: { "@type": "Offer", price: "24.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Toro Cashew",
+          description: "Sultana raisin, shiro dashi, negi, smoked oil.",
+          offers: { "@type": "Offer", price: "32.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Tuna Sashimi",
+          description: "Bluefin tuna, aged tamari, olive oil, chive.",
+          offers: { "@type": "Offer", price: "22.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Wagyu A5 Carpaccio",
+          description:
+            "Farm egg, crispy mushrooms, wasabi, pickles, meyer lemon.",
+          offers: { "@type": "Offer", price: "29.00", priceCurrency: "USD" },
+        },
+      ],
+    },
+    {
+      "@type": "MenuSection",
+      name: "Yakimono",
+      hasMenuItem: [
+        {
+          "@type": "MenuItem",
+          name: "Lobster Thermidor",
+          description: "Blue crab, greens, chili crunch.",
+          offers: { "@type": "Offer", price: "29.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Dry Aged Toro Steak",
+          description: "Flat iron, asian pear, leeks, tare.",
+          offers: { "@type": "Offer", price: "65.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "American Wagyu",
+          description: "NY strip, sauce au poivre, green salad.",
+          offers: { "@type": "Offer", price: "42.00", priceCurrency: "USD" },
+        },
+      ],
+    },
+    {
+      "@type": "MenuSection",
+      name: "Handroll",
+      hasMenuItem: [
+        {
+          "@type": "MenuItem",
+          name: "Bluefin Tuna Handroll",
+          description: "Cucumber, tamari.",
+          offers: { "@type": "Offer", price: "7.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Salmon Handroll",
+          description: "Ora King salmon, cucumber, ponzu.",
+          offers: { "@type": "Offer", price: "6.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Uni Handroll",
+          description: "Hand harvested in Maine.",
+          offers: { "@type": "Offer", price: "24.00", priceCurrency: "USD" },
+        },
+        {
+          "@type": "MenuItem",
+          name: "Caviar Handroll",
+          description: "Amber kaluga caviar, potato chip, chive.",
+          offers: { "@type": "Offer", price: "45.00", priceCurrency: "USD" },
+        },
+      ],
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://kitsunori.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Menu",
+      item: "https://kitsunori.com/menu",
+    },
+  ],
+};
 
 const dietaryFilters: { tag: DietaryTag; label: string }[] = [
   { tag: "GF", label: "Gluten-Free" },
@@ -18,7 +178,7 @@ const dietaryFilters: { tag: DietaryTag; label: string }[] = [
 
 export default function MenuPage() {
   const [openCategories, setOpenCategories] = useState<Set<string>>(
-    new Set(menuCategories.map((c) => c.id))
+    new Set(menuCategories.map((c) => c.id)),
   );
   const [activeFilter, setActiveFilter] = useState<DietaryTag | null>(null);
   const categoryRefs = useRef<Record<string, HTMLElement | null>>({});
@@ -33,7 +193,10 @@ export default function MenuPage() {
   }
 
   function scrollToCategory(id: string) {
-    categoryRefs.current[id]?.scrollIntoView({ behavior: "smooth", block: "start" });
+    categoryRefs.current[id]?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   }
 
   const filteredItems = activeFilter
@@ -42,12 +205,16 @@ export default function MenuPage() {
 
   return (
     <>
+      <JsonLd data={menuSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* Page hero */}
       <div className="pt-24 pb-12 bg-[rgb(29,51,98)] text-white text-center">
         <p className="text-xs tracking-[0.4em] uppercase text-[rgb(184,152,90)] font-medium mb-3">
           Kitsu Nori
         </p>
-        <h1 className="font-serif text-5xl lg:text-6xl font-light mb-4">Our Menu</h1>
+        <h1 className="font-serif text-5xl lg:text-6xl font-light mb-4">
+          Our Menu
+        </h1>
         <p className="text-white/60 max-w-md mx-auto text-sm leading-relaxed">
           Seasonal, sustainable, and crafted with care. Dietary needs? Just ask.
         </p>
@@ -70,7 +237,10 @@ export default function MenuPage() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Category nav */}
-        <nav className="flex flex-wrap gap-2 mb-8 pb-8 border-b border-gray-100" aria-label="Menu categories">
+        <nav
+          className="flex flex-wrap gap-2 mb-8 pb-8 border-b border-gray-100"
+          aria-label="Menu categories"
+        >
           {menuCategories.map((cat) => (
             <button
               key={cat.id}
@@ -95,7 +265,7 @@ export default function MenuPage() {
                 "px-3 py-1.5 text-xs font-medium border rounded-sm transition-all",
                 activeFilter === tag
                   ? "bg-[rgb(29,51,98)] text-white border-[rgb(29,51,98)]"
-                  : "border-gray-200 text-[rgb(42,40,38)] hover:border-[rgb(29,51,98)]"
+                  : "border-gray-200 text-[rgb(42,40,38)] hover:border-[rgb(29,51,98)]",
               )}
             >
               {label}
@@ -122,7 +292,8 @@ export default function MenuPage() {
                 Happy Hour · Mon–Fri 3–6 PM
               </p>
               <p className="text-sm text-[rgb(42,40,38)]">
-                Half-price starters, $5 sake, and 20% off specialty rolls. Dine-in only.
+                Half-price starters, $5 sake, and 20% off specialty rolls.
+                Dine-in only.
               </p>
             </div>
           </div>
@@ -150,7 +321,9 @@ export default function MenuPage() {
             return (
               <section
                 key={cat.id}
-                ref={(el) => { categoryRefs.current[cat.id] = el; }}
+                ref={(el) => {
+                  categoryRefs.current[cat.id] = el;
+                }}
                 className="mb-2 border-b border-gray-100 last:border-0"
               >
                 {/* Category header */}
@@ -178,7 +351,7 @@ export default function MenuPage() {
                 <div
                   className={cn(
                     "overflow-hidden transition-all duration-300 ease-in-out",
-                    isOpen ? "max-h-[5000px] pb-6" : "max-h-0"
+                    isOpen ? "max-h-[5000px] pb-6" : "max-h-0",
                   )}
                 >
                   <div className="space-y-0">
@@ -194,10 +367,11 @@ export default function MenuPage() {
         {/* Allergen note */}
         <div className="mt-12 p-5 bg-gray-50 border border-gray-100">
           <p className="text-xs text-[rgb(156,148,138)] leading-relaxed">
-            <strong className="text-[rgb(42,40,38)]">Allergen Notice:</strong> Our kitchen handles
-            nuts, shellfish, soy, wheat, eggs, and dairy. Please inform your server of any allergies.
-            GF = Gluten-Free, V = Vegetarian, VG = Vegan, DF = Dairy-Free. Menu items and prices
-            are subject to change.
+            <strong className="text-[rgb(42,40,38)]">Allergen Notice:</strong>{" "}
+            Our kitchen handles nuts, shellfish, soy, wheat, eggs, and dairy.
+            Please inform your server of any allergies. GF = Gluten-Free, V =
+            Vegetarian, VG = Vegan, DF = Dairy-Free. Menu items and prices are
+            subject to change.
           </p>
         </div>
       </div>
@@ -205,7 +379,11 @@ export default function MenuPage() {
   );
 }
 
-function MenuItemRow({ item }: { item: ReturnType<typeof getItemsByCategory>[number] }) {
+function MenuItemRow({
+  item,
+}: {
+  item: ReturnType<typeof getItemsByCategory>[number];
+}) {
   return (
     <div className="flex gap-4 py-5 border-b border-gray-50 last:border-0 group">
       {/* Optional image */}
@@ -223,7 +401,9 @@ function MenuItemRow({ item }: { item: ReturnType<typeof getItemsByCategory>[num
       <div className="flex-1 min-w-0">
         <div className="flex items-start justify-between gap-3 mb-1">
           <div className="flex items-center flex-wrap gap-2">
-            <h3 className="font-medium text-[rgb(42,40,38)] text-base">{item.name}</h3>
+            <h3 className="font-medium text-[rgb(42,40,38)] text-base">
+              {item.name}
+            </h3>
             {item.dietary_tags.map((tag) => (
               <DietaryBadge key={tag} tag={tag} />
             ))}
@@ -232,7 +412,9 @@ function MenuItemRow({ item }: { item: ReturnType<typeof getItemsByCategory>[num
             {formatPrice(item.price)}
           </span>
         </div>
-        <p className="text-sm text-[rgb(156,148,138)] leading-relaxed">{item.description}</p>
+        <p className="text-sm text-[rgb(156,148,138)] leading-relaxed">
+          {item.description}
+        </p>
       </div>
     </div>
   );

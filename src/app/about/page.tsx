@@ -2,9 +2,30 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Our Story",
   description:
-    "Learn about Kitsu Nori's story, our chef, and our commitment to Japanese culinary tradition in Austin, TX.",
+    "Meet Chef Kenji Mori and learn the story behind Kitsu Nori — Austin's premier handroll bar born from 20+ years of Japanese culinary mastery and a deep love for Texas.",
+  keywords: [
+    "Kitsu Nori story",
+    "Chef Kenji Mori",
+    "Japanese chef Austin TX",
+    "about Kitsu Nori Austin",
+  ],
+  alternates: { canonical: "https://kitsunori.com/about" },
+  openGraph: {
+    title: "Our Story | Kitsu Nori",
+    description:
+      "Meet Chef Kenji Mori — trained in Tokyo, inspired by Austin. The story behind Kitsu Nori.",
+    url: "https://kitsunori.com/about",
+    images: [
+      {
+        url: "/og-about.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Chef Kenji Mori at Kitsu Nori",
+      },
+    ],
+  },
 };
 
 const galleryImages = [
@@ -28,8 +49,8 @@ export default function AboutPage() {
           Crafted from the Heart
         </h1>
         <p className="text-white/60 max-w-xl mx-auto text-base leading-relaxed">
-          How a young chef from Osaka brought his passion to Austin — and built something
-          that feels like home.
+          How a young chef from Osaka brought his passion to Austin — and built
+          something that feels like home.
         </p>
       </div>
 
@@ -38,27 +59,31 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="prose prose-lg max-w-none">
             <p className="text-lg text-[rgb(42,40,38)] leading-relaxed mb-6 font-light">
-              Kitsu Nori was born from a simple belief: that great sushi shouldn&apos;t require
-              a passport or a trust fund. Chef Kenji Mori grew up watching his grandmother
-              prepare traditional washoku in their small Osaka kitchen — each gesture precise,
-              each ingredient chosen with reverence.
+              Kitsu Nori was born from a simple belief: that great sushi
+              shouldn&apos;t require a passport or a trust fund. Chef Kenji Mori
+              grew up watching his grandmother prepare traditional washoku in
+              their small Osaka kitchen — each gesture precise, each ingredient
+              chosen with reverence.
             </p>
             <p className="text-[rgb(156,148,138)] leading-relaxed mb-6">
-              After training under master sushi chef Hiroshi Tanaka in Tokyo for six years
-              and working at acclaimed restaurants in San Francisco and New York, Kenji
-              arrived in Austin in 2019. He fell in love with the city&apos;s energy, its
-              creativity, and its deep pride in local culture.
+              After training under master sushi chef Hiroshi Tanaka in Tokyo for
+              six years and working at acclaimed restaurants in San Francisco
+              and New York, Kenji arrived in Austin in 2019. He fell in love
+              with the city&apos;s energy, its creativity, and its deep pride in
+              local culture.
             </p>
             <p className="text-[rgb(156,148,138)] leading-relaxed mb-6">
-              Kitsu Nori opened in 2021 with a single mission: to serve food that honors
-              Japanese tradition while celebrating the warmth and spirit of Austin. Every
-              roll, every plate of sashimi, every bowl of miso soup is made with intention
-              — sourced from sustainable fisheries, supported by local farms, and prepared
-              by a team that genuinely cares.
+              Kitsu Nori opened in 2021 with a single mission: to serve food
+              that honors Japanese tradition while celebrating the warmth and
+              spirit of Austin. Every roll, every plate of sashimi, every bowl
+              of miso soup is made with intention — sourced from sustainable
+              fisheries, supported by local farms, and prepared by a team that
+              genuinely cares.
             </p>
             <p className="text-[rgb(156,148,138)] leading-relaxed">
-              We believe that dining is a form of connection — between chef and guest,
-              between cultures, between past and present. Come hungry. Leave inspired.
+              We believe that dining is a form of connection — between chef and
+              guest, between cultures, between past and present. Come hungry.
+              Leave inspired.
             </p>
           </div>
         </div>
@@ -91,13 +116,15 @@ export default function AboutPage() {
               </p>
               <div className="w-12 h-px bg-[rgb(184,152,90)] mb-8" />
               <p className="text-[rgb(156,148,138)] leading-relaxed mb-5">
-                With over 20 years of culinary experience spanning Tokyo, New York, and
-                San Francisco, Chef Kenji brings a reverent approach to traditional Japanese
-                technique — filtered through his love for bold, honest flavors.
+                With over 20 years of culinary experience spanning Tokyo, New
+                York, and San Francisco, Chef Kenji brings a reverent approach
+                to traditional Japanese technique — filtered through his love
+                for bold, honest flavors.
               </p>
               <p className="text-[rgb(156,148,138)] leading-relaxed mb-8">
-                "I want every guest to feel the care that went into their meal. Not through
-                showiness — through honesty. The best ingredient, prepared the right way."
+                "I want every guest to feel the care that went into their meal.
+                Not through showiness — through honesty. The best ingredient,
+                prepared the right way."
               </p>
               <div className="flex flex-wrap gap-4 text-xs text-[rgb(156,148,138)] uppercase tracking-widest">
                 <span>Uchi Alumni</span>
@@ -124,7 +151,10 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {galleryImages.map((src, i) => (
-              <div key={i} className="aspect-square overflow-hidden bg-gray-100">
+              <div
+                key={i}
+                className="aspect-square overflow-hidden bg-gray-100"
+              >
                 <img
                   src={src}
                   alt={`Kitsu Nori interior ${i + 1}`}
